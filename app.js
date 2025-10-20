@@ -1,22 +1,30 @@
-const API_URL = '[http://127.0.0.1:8000/api/fruits/](http://127.0.0.1:8000/api/fruits/)';
+const API_URL = 'http://127.0.0.1:8000/api/fruits/';
 const fruitListContainer = document.getElementById('fruit-list');
 const addFruitForm = document.getElementById('add-fruit-form');
 
 const fetchFruits = async () => {
-    const response = await fetch(API_URL);
-    const fruits = await response.json();
-    
-    fruitListContainer.innerHTML = ''; // Liste leeren
+    try {
+        const response = await fetch(API_URL);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const fruits = await response.json();
+        
+        fruitListContainer.innerHTML = ''; // Liste leeren
 
-    fruits.forEach(fruit => {
-        const fruitElement = document.createElement('div');
-        fruitElement.innerHTML = `
-            <h3>${fruit.name} (${fruit.brand})</h3>
-            <p><strong>Farbe:</strong> ${fruit.color}</p>
-            <p><strong>Herkunft:</strong> ${fruit.origin}</p>
-        `;
-        fruitListContainer.appendChild(fruitElement);
-    });
+        fruits.forEach(fruit => {
+            const fruitElement = document.createElement('div');
+            fruitElement.innerHTML = `
+                <h3>${fruit.name} (${fruit.brand})</h3>
+                <p><strong>Farbe:</strong> ${fruit.color}</p>
+                <p><strong>Herkunft:</strong> ${fruit.origin}</p>
+            `;
+            fruitListContainer.appendChild(fruitElement);
+        });
+    } catch (error) {
+        fruitListContainer.innerHTML = `<p>Fehler beim Laden der Früchte. Läuft das Backend auf Port 8000?</p>`;
+        console.error('Fetch error:', error);
+    }
 };
 
 addFruitForm.addEventListener('submit', async (event) => {
