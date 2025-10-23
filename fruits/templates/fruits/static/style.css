@@ -1,0 +1,13 @@
+h1 {
+    color: darkblue; /* Ändere die Farbe der H1-Überschrift */
+    font-size: 2.5em; /* Mache die H1-Überschrift größer */
+}
+
+h2 {
+    color: green; /* Ändere die Farbe von H2-Überschriften (z.B. im Info-Bereich) */
+}
+
+body {
+    font-family: sans-serif; /* Setze eine Standard-Schriftart */
+    padding: 20px;
+}
