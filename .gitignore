@@ -1,0 +1,11 @@
+# .gitignore
+
+# Python
+__pycache__/
+*.pyc
+
+# Virtuelle Umgebung
+venv/
+
+# Datenbank
+db.sqlite3
