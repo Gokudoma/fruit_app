@@ -1,0 +1,13 @@
+{% extends "fruits/base.html" %}
+
+{% block content %}
+    <h1>Meine Obstliste</h1>
+
+    <ul>
+        {% for fruit in fruits %}
+            <li>
+                {{ fruit.name }} (Farbe: {{ fruit.color }}, Gewicht: {{ fruit.weight }}g)
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
