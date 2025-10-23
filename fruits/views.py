@@ -26,11 +26,11 @@ def fruit_list(request):
 
 # Daten aus der fruitsArrayBasic.txt
 fruits_static_list = [
-    {"name": "Apfel", "weight": 100, "color": "red"},
-    {"name": "Banane", "weight": 120, "color": "yellow"},
-    {"name": "Orange", "weight": 150, "color": "orange"},
-    {"name": "Birne", "weight": 130, "color": "green"},
-    {"name": "Kirsche", "weight": 10, "color": "red"}
+    {"name": "Apfel", "weight": 100, "color": "red", "img": "fruits/img/apfel.jpg"},
+    {"name": "Banane", "weight": 120, "color": "yellow", "img": "fruits/img/banane.jpg"},
+    {"name": "Orange", "weight": 150, "color": "orange", "img": "fruits/img/orange.jpg"},
+    {"name": "Birne", "weight": 130, "color": "green", "img": "fruits/img/birne.jpg"},
+    {"name": "Kirsche", "weight": 10, "color": "red", "img": "fruits/img/kirsche.jpg"}
 ]
 
 
