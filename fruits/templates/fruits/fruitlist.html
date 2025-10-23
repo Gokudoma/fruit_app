@@ -3,6 +3,12 @@
 {% block content %}
     <h1>Meine Obstliste</h1>
 
+    <h1>Meine Obstliste</h1>
+
+    <a href="{% url 'info-page' %}">Mehr Infos über Früchte</a>
+
+    <hr>
+
     <ul>
         {% for fruit in fruits %}
             <li>
