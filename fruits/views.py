@@ -40,3 +40,7 @@ def send_fruits(request):
     }
     # Verknüpft mit fruitlist.html
     return render(request, 'fruits/fruitlist.html', context)
+
+def info_view(request):
+    # Diese View muss keine Daten übergeben, sie rendert nur das Template
+    return render(request, 'fruits/info.html')
