@@ -1,4 +1,5 @@
 {% extends "fruits/base.html" %}
+{% load static %}
 
 {% block content %}
     <h1>Meine Obstliste</h1>
@@ -9,7 +10,7 @@
     <h2>Bestellt</h2>
     <ul>
         {% for fruit in fruits %}
-            {% if fruit.is_ordered %} 
+            {% if fruit.is_ordered %}
                 <li>
                     <img src="{% static fruit.img %}" alt="{{ fruit.name }}" height="50">
                     {{ fruit.name }} (Farbe: {{ fruit.color }}, Gewicht: {{ fruit.weight }}g)
@@ -22,7 +23,7 @@
     <ul>
         {% for fruit in fruits %}
             {% if not fruit.is_ordered %}
-                <li>
+                 <li>
                     <img src="{% static fruit.img %}" alt="{{ fruit.name }}" height="50">
                     {{ fruit.name }} (Farbe: {{ fruit.color }}, Gewicht: {{ fruit.weight }}g)
                 </li>
